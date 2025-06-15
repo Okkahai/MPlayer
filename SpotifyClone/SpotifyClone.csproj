@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C39EF456-8BF5-45BC-9E52-8013F60904E6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SpotifyClone</RootNamespace>
+    <AssemblyName>SpotifyClone</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuisnessLogicLayer\tblPlaylistBLL.cs" />
+    <Compile Include="BuisnessLogicLayer\tblPlaylistsongsBLL.cs" />
+    <Compile Include="BuisnessLogicLayer\tblSongBLL.cs" />
+    <Compile Include="BuisnessLogicLayer\tblUserBLL.cs" />
+    <Compile Include="DataAccessObjectLayer\tblPlaylistDOA.cs" />
+    <Compile Include="DataAccessObjectLayer\tblPlaylistsongsDOA.cs" />
+    <Compile Include="DataAccessObjectLayer\tblSongDOA.cs" />
+    <Compile Include="DataAccessObjectLayer\tblUserDOA.cs" />
+    <Compile Include="dbConn\veritabaniBaglantisi.cs" />
+    <Compile Include="Methods\DataGrid_Design.cs" />
+    <Compile Include="Methods\Listing.cs" />
+    <Compile Include="PocosLayer\tblAlbum.cs" />
+    <Compile Include="PocosLayer\tblArtist.cs" />
+    <Compile Include="PocosLayer\tblCountry.cs" />
+    <Compile Include="PocosLayer\tblGender.cs" />
+    <Compile Include="PocosLayer\tblGenre.cs" />
+    <Compile Include="PocosLayer\tblPlaylist.cs" />
+    <Compile Include="PocosLayer\tblPlaylistSongs.cs" />
+    <Compile Include="PocosLayer\tblSong.cs" />
+    <Compile Include="PocosLayer\tblUser.cs" />
+    <Compile Include="PresentationLayer\DuzenlePlaylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\DuzenlePlaylist.Designer.cs">
+      <DependentUpon>DuzenlePlaylist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\PlaylistPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\PlaylistPage.Designer.cs">
+      <DependentUpon>PlaylistPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UserEntry\AnaMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UserEntry\AnaMenu.Designer.cs">
+      <DependentUpon>AnaMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UserEntry\KullaniciGirisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UserEntry\KullaniciGirisi.Designer.cs">
+      <DependentUpon>KullaniciGirisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\UserEntry\YeniKullanici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\UserEntry\YeniKullanici.Designer.cs">
+      <DependentUpon>YeniKullanici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPOTIFYCLONEDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPOTIFYCLONEDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SPOTIFYCLONEDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPOTIFYCLONEDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SPOTIFYCLONEDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPOTIFYCLONEDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SPOTIFYCLONEDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPOTIFYCLONEDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SPOTIFYCLONEDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPOTIFYCLONEDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SPOTIFYCLONEDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPOTIFYCLONEDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SPOTIFYCLONEDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPOTIFYCLONEDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SPOTIFYCLONEDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPOTIFYCLONEDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SPOTIFYCLONEDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPOTIFYCLONEDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SPOTIFYCLONEDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPOTIFYCLONEDataSet9.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PresentationLayer\DuzenlePlaylist.resx">
+      <DependentUpon>DuzenlePlaylist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\PlaylistPage.resx">
+      <DependentUpon>PlaylistPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UserEntry\AnaMenu.resx">
+      <DependentUpon>AnaMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UserEntry\KullaniciGirisi.resx">
+      <DependentUpon>KullaniciGirisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\UserEntry\YeniKullanici.resx">
+      <DependentUpon>YeniKullanici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SPOTIFYCLONEDataSet.xsc">
+      <DependentUpon>SPOTIFYCLONEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPOTIFYCLONEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet.xss">
+      <DependentUpon>SPOTIFYCLONEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet1.xsc">
+      <DependentUpon>SPOTIFYCLONEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPOTIFYCLONEDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet1.xss">
+      <DependentUpon>SPOTIFYCLONEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet2.xsc">
+      <DependentUpon>SPOTIFYCLONEDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPOTIFYCLONEDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet2.xss">
+      <DependentUpon>SPOTIFYCLONEDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet3.xsc">
+      <DependentUpon>SPOTIFYCLONEDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPOTIFYCLONEDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet3.xss">
+      <DependentUpon>SPOTIFYCLONEDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet4.xsc">
+      <DependentUpon>SPOTIFYCLONEDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPOTIFYCLONEDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet4.xss">
+      <DependentUpon>SPOTIFYCLONEDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet5.xsc">
+      <DependentUpon>SPOTIFYCLONEDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPOTIFYCLONEDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet5.xss">
+      <DependentUpon>SPOTIFYCLONEDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet6.xsc">
+      <DependentUpon>SPOTIFYCLONEDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPOTIFYCLONEDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet6.xss">
+      <DependentUpon>SPOTIFYCLONEDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet7.xsc">
+      <DependentUpon>SPOTIFYCLONEDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPOTIFYCLONEDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet7.xss">
+      <DependentUpon>SPOTIFYCLONEDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet8.xsc">
+      <DependentUpon>SPOTIFYCLONEDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPOTIFYCLONEDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet8.xss">
+      <DependentUpon>SPOTIFYCLONEDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet9.xsc">
+      <DependentUpon>SPOTIFYCLONEDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPOTIFYCLONEDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPOTIFYCLONEDataSet9.xss">
+      <DependentUpon>SPOTIFYCLONEDataSet9.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="songFile\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
